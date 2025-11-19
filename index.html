@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>背景色チェンジ！！</title>
+
+    <style>
+        /* ページ全体の基本スタイル */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            height: 100vh;            /* 画面全体を使う */
+            display: flex;           
+            flex-direction: column;
+            justify-content: center;  /* 内容を中央寄せ */
+            align-items: center;      /* 横方向も中央 */
+            transition: background 0.3s; /* 色がスッと変わるアニメーション */
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ボタン：押すと背景色が変わる -->
+    <button id="changeBtn">カラーチェンジ！</button>
+
+    <script>
+        // ランダムな色を作る関数（#RRGGBBの形式）
+        function randomColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        // ボタンを押したときに背景色を変更
+        document.getElementById('changeBtn').addEventListener('click', () => {
+            document.body.style.background = randomColor();
+        });
+    </script>
+
+</body>
+</html>
